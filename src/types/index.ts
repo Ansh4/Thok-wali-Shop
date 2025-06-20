@@ -5,6 +5,7 @@ export interface Product {
   mrp: number;
   code: string;
   barcode: string;
+  costPriceCode: string; // New field
   lowInventoryFactor: number;
   currentStock: number;
 }

@@ -1,9 +1,9 @@
 import type { Product, ProductFormData } from '@/types';
 
 let products: Product[] = [
-  { id: '1', name: 'Sample Product A', description: 'This is a sample product.', mrp: 100, code: 'SP001', barcode: '1234567890123', lowInventoryFactor: 5, currentStock: 10 },
-  { id: '2', name: 'Sample Product B', description: 'Another great sample item.', mrp: 25.50, code: 'SP002', barcode: '9876543210987', lowInventoryFactor: 10, currentStock: 8 },
-  { id: '3', name: 'Low Stock Item C', description: 'This item is running low.', mrp: 49.99, code: 'LS003', barcode: '1122334455667', lowInventoryFactor: 15, currentStock: 12 },
+  { id: '1', name: 'Sample Product A', description: 'This is a sample product.', mrp: 100, code: 'SP001', barcode: '1234567890123', costPriceCode: 'C10', lowInventoryFactor: 5, currentStock: 10 },
+  { id: '2', name: 'Sample Product B', description: 'Another great sample item.', mrp: 25.50, code: 'SP002', barcode: '9876543210987', costPriceCode: 'L5', lowInventoryFactor: 10, currentStock: 8 },
+  { id: '3', name: 'Low Stock Item C', description: 'This item is running low.', mrp: 49.99, code: 'LS003', barcode: '1122334455667', costPriceCode: 'C15', lowInventoryFactor: 15, currentStock: 12 },
 ];
 
 // Simulate database interactions with a delay

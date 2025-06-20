@@ -21,7 +21,7 @@ import { sellProductSchema } from "@/lib/validators";
 import { sellProductAction, fetchProductByBarcodeAction } from "@/lib/actions";
 import BarcodeScannerDialog from "@/components/shared/BarcodeScannerDialog";
 import type { Product } from "@/types";
-import { ScanBarcodeIcon, ShoppingCart, Package, Info, Loader2 } from "lucide-react";
+import { ScanBarcodeIcon, ShoppingCart, Package, Info, Loader2, Tag } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 type SellProductFormValues = z.infer<typeof sellProductSchema>;
@@ -142,7 +142,7 @@ export default function SellProductForm() {
                   <Package className="h-5 w-5 text-accent" />
                   <AlertTitle className="font-headline text-accent">{scannedProduct.name}</AlertTitle>
                   <AlertDescription>
-                    Current Stock: {scannedProduct.currentStock} | MRP: ${scannedProduct.mrp.toFixed(2)}
+                    Current Stock: {scannedProduct.currentStock} | MRP: ${scannedProduct.mrp.toFixed(2)} | Cost Code: {scannedProduct.costPriceCode}
                   </AlertDescription>
                 </Alert>
               )}

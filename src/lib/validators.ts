@@ -6,6 +6,7 @@ export const addProductSchema = z.object({
   mrp: z.coerce.number().positive({ message: "MRP must be a positive number." }),
   code: z.string().min(2, { message: "Product code must be at least 2 characters." }).max(50),
   barcode: z.string().min(5, { message: "Barcode must be at least 5 characters." }).max(50),
+  costPriceCode: z.string().min(1, { message: "Cost Price/Less Code cannot be empty."}).max(50, {message: "Cost Price/Less Code must be at most 50 characters."}),
   lowInventoryFactor: z.coerce.number().int().min(0, { message: "Low inventory factor must be a non-negative integer." }),
 });
 

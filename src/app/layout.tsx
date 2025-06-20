@@ -4,8 +4,8 @@ import { Toaster } from '@/components/ui/toaster';
 import Navbar from '@/components/layout/Navbar';
 
 export const metadata: Metadata = {
-  title: 'StockPilot',
-  description: 'Manage your stock efficiently with StockPilot.',
+  title: 'Thok Wali Shop',
+  description: 'Manage your stock efficiently with Thok Wali Shop.',
 };
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
 import type { Product } from "@/types";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Package, AlertTriangle, TrendingDown, DollarSign } from "lucide-react";
+import { Package, AlertTriangle, TrendingDown, DollarSign, Tag } from "lucide-react";
 
 interface ProductCardProps {
   product: Product;
@@ -41,8 +41,12 @@ export default function ProductCard({ product }: ProductCardProps) {
           <TrendingDown size={16} className="text-orange-500"/> 
           <span>Low Factor:</span> <span className="font-semibold text-foreground">{product.lowInventoryFactor}</span>
         </div>
-        <div className="col-span-2 flex items-center gap-2 text-muted-foreground">
+        <div className="flex items-center gap-2 text-muted-foreground"> {/* Barcode now takes half width */}
           <span>Barcode:</span> <span className="font-semibold text-foreground">{product.barcode}</span>
+        </div>
+        <div className="flex items-center gap-2 text-muted-foreground"> {/* New Cost Price Code field */}
+          <Tag size={16} className="text-purple-500"/>
+          <span>Cost Code:</span> <span className="font-semibold text-foreground">{product.costPriceCode}</span>
         </div>
       </CardContent>
       <CardFooter className="text-xs text-muted-foreground pt-3">

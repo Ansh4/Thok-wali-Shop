@@ -8,7 +8,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center ">
       <div className="text-center mb-12">
         <PackageSearch size={64} className="mx-auto mb-4 text-primary" />
-        <h1 className="text-5xl font-bold font-headline text-primary">Welcome to StockPilot</h1>
+        <h1 className="text-5xl font-bold font-headline text-primary">Welcome to Thok Wali Shop</h1>
         <p className="text-xl text-muted-foreground mt-2">Your streamlined inventory management solution.</p>
       </div>
 

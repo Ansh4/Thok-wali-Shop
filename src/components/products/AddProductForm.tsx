@@ -22,7 +22,7 @@ import { useToast } from "@/hooks/use-toast";
 import { addProductSchema } from "@/lib/validators";
 import { createProductAction } from "@/lib/actions";
 import BarcodeScannerDialog from "@/components/shared/BarcodeScannerDialog";
-import { ScanBarcodeIcon, Loader2 } from "lucide-react";
+import { ScanBarcodeIcon, Loader2, Tag } from "lucide-react";
 
 type AddProductFormValues = z.infer<typeof addProductSchema>;
 
@@ -39,6 +39,7 @@ export default function AddProductForm() {
       mrp: 0,
       code: "",
       barcode: "",
+      costPriceCode: "",
       lowInventoryFactor: 0,
     },
   });
@@ -134,7 +135,7 @@ export default function AddProductForm() {
                   )}
                 />
               </div>
-              <FormField
+               <FormField
                 control={form.control}
                 name="barcode"
                 render={({ field }) => (
@@ -152,22 +153,40 @@ export default function AddProductForm() {
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="lowInventoryFactor"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Low Inventory Factor</FormLabel>
-                    <FormControl>
-                      <Input type="number" step="1" placeholder="e.g., 10" {...field} />
-                    </FormControl>
-                    <FormDescription>
-                      Minimum quantity to trigger low inventory warning.
-                    </FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+               <div className="grid md:grid-cols-2 gap-8">
+                <FormField
+                  control={form.control}
+                  name="costPriceCode"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Cost Price / Less Code</FormLabel>
+                      <FormControl>
+                        <Input placeholder="e.g., C10 or L5" {...field} />
+                      </FormControl>
+                       <FormDescription>
+                        Code to identify cost price or less percentage.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="lowInventoryFactor"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Low Inventory Factor</FormLabel>
+                      <FormControl>
+                        <Input type="number" step="1" placeholder="e.g., 10" {...field} />
+                      </FormControl>
+                      <FormDescription>
+                        Minimum quantity to trigger low inventory warning.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
               <Button type="submit" disabled={isPending} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-md shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105">
                 {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
                 Save Product
