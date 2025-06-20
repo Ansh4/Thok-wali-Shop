@@ -1,0 +1,27 @@
+{
+  "node": {
+    "407e5b31eaa27f780ad44b19beba584ebc54ffdd3a": {
+      "workers": {
+        "app/sell-product/page": {
+          "moduleId": "[project]/.next-internal/server/app/sell-product/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/sell-product/page": "action-browser"
+      }
+    },
+    "403b58c4d98a4bd902fc1ff30eeeac4e89e9ac3287": {
+      "workers": {
+        "app/sell-product/page": {
+          "moduleId": "[project]/.next-internal/server/app/sell-product/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/sell-product/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}
